@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url(''); /* Background image */
+            background-size: cover; /* Ensure the image covers the whole background */
+            background-position: center; /* Center the image */
+            text-align: center;
+            color: #ffffff; /* Default text color */
+        }
+        h1 {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 10px;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #3498DB; /* Button color */
+            color: #ffffff; /* Button text color */
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #2980B9; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>TPee</h1>
+    <button onclick="startGame()">Play</button>
+    <p id="scoreDisplay"></p>
+
+    <script>
+        // Function to start the game
+        function startGame() {
+            window.location.href = 'game.html';
+        }
+
+        // Display the last score if available
+        window.onload = function() {
+            const lastScore = localStorage.getItem('lastScore');
+            if (lastScore) {
+                document.getElementById('scoreDisplay').innerText = `Last Score: ${lastScore}`;
+                localStorage.removeItem('lastScore'); // Clear the score after displaying
+            }
+        }
+    </script>
+</body>
+</html>
