@@ -74,7 +74,7 @@ function displayScore() {
 // Function to reset the game
 function resetGame() {
     localStorage.setItem('lastScore', score); // Save the score to localStorage
-    window.location.href = 'home.html'; // Redirect to home page
+    window.location.href = 'index.html'; // Redirect to home page
 }
 
 // Function to pause the game
